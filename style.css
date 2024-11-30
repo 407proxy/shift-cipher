@@ -61,13 +61,14 @@
     border: 2px solid black; 
     padding: 10px 20px; 
     cursor: pointer; 
-    transition: background-color 0.3s, color 0.3s; 
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
     margin-top: 30px;
   }
 
   .get-started-button:hover {
     background-color: black;
     color: white;
+    transform: scale(1.09); 
   }
 
   .about-text {
@@ -97,4 +98,40 @@
     margin-bottom: 20px;
   }
 
-  
+  .button-container {
+    display: flex; 
+    justify-content: center; 
+    margin-top: 0px; 
+}
+
+  .action-button {
+    background-color: white;
+    border-color: black;
+    color: black;
+    border-radius: 44px;
+    font-family: inter;
+    font-size: 40px;
+    text-align: center;
+    border: 2px solid black; 
+    padding: 15px 40px; 
+    cursor: pointer; 
+    font-weight: bold;
+    transition: transform 0.5s ease-in-out, background-color 0.5s ease-in-out, color 0.5s ease-in-out;
+    margin-top: 30px;
+    margin: 0 10px;
+  }
+
+  .action-button:hover {
+    background-color: black;
+    color: white;
+    transform: scale(1.1); 
+  }
+
+  .instruction-text{
+    font-family: inter;
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+    margin-top: 50px;
+    margin-bottom: 0px;
+  }
