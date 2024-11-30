@@ -16,14 +16,8 @@ To run this project, you need:
 - A modern web browser (Chrome, Firefox, Safari, etc.)
 
 ### Installation
-1. Clone the repository: 
-
-git clone https://github.com/407proxy/shift-cipher.git
-
-2. Navigate to the project directory:
-
-cd shift-cipher
-
+1. Clone the repository: `git clone https://github.com/407proxy/shift-cipher.git`
+2. Navigate to the project directory: `cd shift-cipher`
 3. Open `index.html` in your web browser.
 
 ## Usage
@@ -42,11 +36,11 @@ Contributions are welcome! If you have suggestions for improvements or new featu
 
 1. Fork the repository.
 2. Create your feature branch:
-git checkout -b feature/MyFeature
+`git checkout -b feature/MyFeature`
 3. Commit your changes:
-git commit -m 'Add some feature'
+`git commit -m 'Add some feature'`
 4. Push to the branch:
-git push origin feature/MyFeature
+`git push origin feature/MyFeature`
 5. Open a pull request.
 
 ## License
