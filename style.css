@@ -3,6 +3,22 @@
     src: url(Inter_18pt-Regular.ttf);
   }
 
+  .fade-out {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+  }
+
+  .fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+  }
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
 .container {
     display: flex; 
     justify-content: space-between; 
@@ -135,3 +151,52 @@
     margin-top: 50px;
     margin-bottom: 0px;
   }
+
+  input[type="text"] {
+    font-family: inter;
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+    width: 300px; 
+    padding: 10px 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  input[type="number"] {
+    font-family: inter;
+    font-size: 20px;
+    text-align: center;
+    font-weight: normal;
+    width: 300px; 
+    padding: 10px 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    text-align: center;
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  .input-text-form{
+    font-family: inter;
+    font-size: 20px;
+  }
+
+  .integer-form{
+    font-family: inter;
+    font-size: 20px;
+  }
+
+  .display-message{
+    font-family: inter;
+    font-size: 20px;
+    color: black;
+  }
+  
+
+  
