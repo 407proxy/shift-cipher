@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Encode</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Shift Cipher</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,9 +14,20 @@
         <button class="devs-title" onclick="redirectToHomePage()">Home</button>
     </div>
 
-    <h2 class="shift-cipher-title">
-        encode
-    </h2>
+    <form class="input-text-form">
+        <p class="instruction-text">Enter your message to be coded:</p>
+        <input type="text" id="uncodedMessage" name="uncodedMessage" placeholder="e.g. The quick brown fox..." required oninput="updateText()">
+    </form>
+
+    <form class="integer-form">
+        <p class="instruction-text">Enter shift key:</p>
+        <input type="number" id="shiftKey" name="shiftKey" placeholder="e.g. 3" required step="1" min="0">
+    </form>
+
+    <p class="instruction-text">Caesar-encoded message (copy and paste):</p>
+
+    <p id="display-message" class="display-message"></p>
+
     <script src="script.js"></script>
 </body>
 </html>
