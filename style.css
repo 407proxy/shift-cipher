@@ -26,6 +26,13 @@
     width: 100%;
     margin-bottom: 70px;
 }
+
+.title-container {
+  display: flex; 
+  justify-content: center;
+  align-items: center; 
+  width: 100%;
+}
   
   .shift-cipher-title {
     font-family: inter;
@@ -194,9 +201,26 @@
 
   .display-message{
     font-family: inter;
-    font-size: 20px;
+    font-size: 25px;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 0px;
     color: black;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    overflow-wrap: break-word;
   }
   
+  .shift-key {
+    font-family: inter;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    margin: 15px;
+    margin-bottom: 60px;
+  }
 
   
