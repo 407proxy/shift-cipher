@@ -16,17 +16,16 @@
 
     <form class="input-text-form">
         <p class="instruction-text">Enter your message to be coded:</p>
-        <input type="text" id="uncodedMessage" name="uncodedMessage" placeholder="e.g. The quick brown fox..." required oninput="updateText()">
+        <input type="text" id="uncoded-message" name="uncoded-message" placeholder="e.g. The quick brown fox..." required oninput="updateOutputEncode()">
     </form>
 
     <form class="integer-form">
         <p class="instruction-text">Enter shift key:</p>
-        <input type="number" id="shiftKey" name="shiftKey" placeholder="e.g. 3" required step="1" min="0">
+        <input type="number" id="shift-key-encode" name="shift-key-encode" placeholder="e.g. 3" required step="1" min="-26" max="26" oninput="updateOutputEncode()">
     </form>
 
     <p class="instruction-text">Caesar-encoded message (copy and paste):</p>
-
-    <p id="display-message" class="display-message"></p>
+    <p id="display-message-encode" class="display-message">Message will appear here...</p>
 
     <script src="script.js"></script>
 </body>
