@@ -14,12 +14,18 @@
         <button class="devs-title" onclick="redirectToHomePage()">Home</button>
     </div>
 
-    <h2 class="shift-cipher-title">
-        decode
-    </h2>
+    <form class="input-text-form">
+        <p class="instruction-text">Enter your message to be decoded:</p>
+        <input type="text" id="coded-message" name="coded-message" placeholder="e.g. Wkh txlfn eurzq ira..." required oninput="updateOutputDecode()">
+    </form>
 
+    <p class="instruction-text">Caesar-decoded message:</p>
+    <p id="display-message" class="display-message">Possible message will appear here...</p>
 
-
+    <form class="integer-form">
+        <p class="instruction-text">Switch the shift value until it shows a coherent message:</p>
+        <input type="number" id="shift-key-decode" name="shift-key-decode" placeholder="e.g. 3" required step="1" min="-26" max="26" oninput="updateOutputDecode(); showShiftKey();">
+    </form>
 
     <script src="script.js"></script>
 </body>
