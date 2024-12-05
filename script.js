@@ -27,52 +27,75 @@ function redirectToDecode() {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
-    
-    const actionButtons = document.querySelectorAll('.action-button');
-    const instructionsTexts = document.querySelectorAll('.instruction-text');
-    const textInputArea = document.querySelectorAll('.input-text-form')
-    const intInputArea = document.querySelectorAll('.integer-form')
+    const fadeInElements = [
+        '.action-button',
+        '.instruction-text',
+        '.input-text-form',
+        '.integer-form',
+        '.display-message'
+    ];
 
-    actionButtons.forEach(button => {
-        button.classList.add('fade-in');
-    });
-    
-    instructionsTexts.forEach(text => {
-        text.classList.add('fade-in');
-    });
-
-    textInputArea.forEach(textInput => {
-        textInput.classList.add('fade-in');
-    });
-
-    intInputArea.forEach(intInput => {
-        intInput.classList.add('fade-in');
-    });
-
-    function updateText() {
-        var input = document.getElementById("uncodedMessage").value;
-        document.getElementById("display-message").innerText = input;
+    function addFadeInClass(selector) {
+        const elements = document.querySelectorAll(selector);
+        elements.forEach(element => {
+            element.classList.add('fade-in');
+        });
     }
+
+    fadeInElements.forEach(selector => addFadeInClass(selector));
 });
 
-/*
+function caesarCipher(str, shift) {
+    return Array.from(str).map(char => {
+        const code = char.charCodeAt(0);
+        if (code >= 65 && code <= 90) { 
+            return String.fromCharCode(((code - 65 + shift + 26) % 26) + 65);
+        } else if (code >= 97 && code <= 122) { 
+            return String.fromCharCode(((code - 97 + shift + 26) % 26) + 97);
+        } else {
+            return char; 
+        }
+    }).join('');
+}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Choice</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container">
-        <h1 class="discrete-math-title">Discrete Math</h1>
-        <button class="devs-title" onclick="redirectToDevsPage()">Home</button>
-    </div>
+function updateOutputDecode() {
+    const inputText = document.getElementById('coded-message').value; 
+    const shiftValue = parseInt(document.getElementById('shift-key-decode').value) || 0; 
+    const decrypted = caesarCipher(inputText, -shiftValue); 
+    document.getElementById('display-message').innerText = decrypted; 
+}
 
-    <script src="script.js"></script>
-</body>
-</html>
+function updateOutputEncode() {
+    const inputText = document.getElementById('uncoded-message').value; 
+    const shiftValue = parseInt(document.getElementById('shift-key-encode').value) || 0; 
+    const encrypted = caesarCipher(inputText, shiftValue); 
+    document.getElementById('display-message-encode').innerText = encrypted; 
+}
 
-*/
+function showShiftKey() {
+   const shiftValue = parseInt(document.getElementById('shift-key-decode').value) || 0;
+   let negativeShiftValue;
+   let positiveShiftValue;
+
+   if (shiftValue > 0) {
+       negativeShiftValue = -shiftValue;
+       positiveShiftValue = 26 - shiftValue;
+   } else if (shiftValue < 0) {
+       negativeShiftValue = -shiftValue; 
+       positiveShiftValue = 26 + shiftValue;
+   } else {
+       negativeShiftValue = 0; 
+       positiveShiftValue = 0; 
+   }
+
+   document.getElementById('k').innerText = `Negative Shift: ${negativeShiftValue}, Positive Shift: ${positiveShiftValue}`; 
+}
+
+document.getElementById('coded-message').addEventListener('input', updateOutputDecode);
+document.getElementById('shift-key-decode').addEventListener('input', function() {
+   updateOutputDecode(); 
+   showShiftKey(); 
+});
+
+document.getElementById('uncoded-message').addEventListener('input', updateOutputEncode);
+document.getElementById('shift-key-encode').addEventListener('input', updateOutputEncode);
