@@ -97,5 +97,7 @@ document.getElementById('shift-key-decode').addEventListener('input', function()
    showShiftKey(); 
 });
 
+// sweatyy sauna
+
 document.getElementById('uncoded-message').addEventListener('input', updateOutputEncode);
 document.getElementById('shift-key-encode').addEventListener('input', updateOutputEncode);
